@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script>
+        window.onload = function(){
+            document.querySelector('#a').style.backgroundColor = 'red';
+            document.querySelector('#b').style.backgroundColor = 'blue';
+            document.querySelector('#c').style.backgroundColor = 'yellow';
+            
+            function seconds(id,str) {
+                var now = new Date();
+                var s = now.getSeconds();
+                document.querySelector(id).innerHTML = s+str;
+            }
+            
+            function tell_phone_number(t1,t2,t3){
+                var phone_number = t1 +"-" +t2+ "-"+t3;  
+                return phone_number;
+                
+            }
+            
+            function add(a1,a2){
+                var n = a1 + a2;
+                return n ;
+            }
+            
+            
+            seconds("#a","秒");
+            var phone_number = tell_phone_number("090","1111","2222");
+            alert(phone_number);
+            
+            var n = add (10,100);
+            alert(n);
+            
+            
+        }
+    </script>
+</head>
+<body>
+   <div id="a">
+       A(赤)
+   </div>
+   <div id="b">
+       B(青)
+   </div>
+   <div id="c">
+      C(黄)
+   </div>
+   
+    
+</body>
+</html>

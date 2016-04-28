@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<h1></h1>
+<h2 id="bgc">こんにちは</h2>
+<div id="omikuji"></div>
+
+<script>
+    
+/*
+//------------------------
+//関数問題
+//------------------------
+//1.アラート”OK”を表示する関数を作ろう
+    function alert_ok(){
+        alert("OK");
+    }
+    
+    alert_ok();
+
+
+//2.一つの文字を関数に渡し、その文字をアラートで表示
+    function one_alert(num){
+        alert(num);
+    }
+    
+    one_alert("おめでとう！！");
+
+//3.２つの数字を関数に渡し、たし算した結果を<h1>に表示
+    function plus(num1,num2){
+        sum = num1 + num2;
+        var result = document.querySelector("h1");
+        result.innerHTML = sum;
+    }
+    
+    plus(1,2)
+
+    
+//4.３つの数字を関数に渡し、足し算結果をreturnする。
+//  returnした値を関数外でalert表示
+    function tripple_plus(first,second,third){
+        var sum = first+second+third;
+        return sum
+    }
+    alert(tripple_plus(1,5,9));
+
+//5.関数に２つの値を渡す。２つは"id名"と"色名"を渡す。
+//  関数内ではid名に対して背景色をつける処理を書きましょう！！
+    function change_color(id_name,color){
+        var object_id = document.getElementById(id_name);
+        object_id.style.backgroundColor = color;
+}
+    
+    change_color("bgc","red");
+
+ */    
+// 6.現在年月日"2016年4月20日" をreturnする関数を作成(400点)
+// return後にalertで表示
+    function get_today(){
+        var now = new Date();
+        var get_year = now.getFullYear();
+        var get_month = now.getMonth() + 1;
+        var get_day = now.getDate();
+        var today = get_year + "年" + get_month + "月" + get_day + "日";
+        console.log(today);
+        return today;
+    }
+    
+    alert(get_today());
+  
+
+</script>
+</body>
+</html>

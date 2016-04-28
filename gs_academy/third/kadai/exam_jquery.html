@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>イベント＆jQuery練習</title>
+<script>
+$(document).ready(function(){
+     //ここからJSを記述Start!!!
+//      $("#btn_1").on("click",function(){
+//      $("header").prepend('<div id="test">岡野健三</div>');      
+//      $("header").prepend('<div id="test">岡野健三</div>');
+//      $("header").prepend('<div id="test">岡野健三</div>'); 
+//      $("header").prepend('<div id="test">岡野健三</div>');
+//      });    
+    
+    // ①headerを１秒消す
+    $("#btn_1").on("click", function(){
+        $("header").hide("1000");
+    });
+    // ②headerを1秒再表示する
+    $("#btn_2").on("click", function(){
+        $("header").show("1000");
+    });
+    //③ダブルクリックでfooterに文字を入れる
+    $("#btn_3").on("dblclick", function(){
+        $("footer").append("私は岡野健三です。");
+    });
+    
+    //④4:id="result"に対して点滅するように記述
+    //追加:id="result"の下に<div>B</div>を追加すること
+    $("#btn_4").on("click", function(){
+        $("#result").fadeOut("500").fadeIn("500").fadeOut("500").fadeIn("500").fadeOut("500").fadeIn("500").fadeOut("500").fadeIn("500");
+        $("#result").append("<div>B</div>");
+    });
+    
+    //5:liの文字を赤と10pxに
+    $("#btn_5").on("click", function(){
+        $("li").css("color","red");
+        $("li").css("font-size","10px");
+    });
+    
+    //6:liの四角を角丸に変更
+    $("#btn_6").on("click", function(){
+        $("li").css( { "border-radius": "10px" } );
+    });
+    
+    //7:liの背景をskyblueに
+    $('#btn_7').on("click", function(){
+        $("li").css("background","skyblue");
+    });
+    
+    //8:liの背景をgrayにし、クリックをoffにする
+    $('#btn_8').on("click", function(){
+    $("li").css("background","gray");
+    $('#btn_8').off("click");
+});
+});
+    
+
+
+    
+
+
+
+     //ここまでJSを記述End!!!
+</script>
+</head>
+<body>
+
+<header>
+  <h1>番号表示</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="btn_1">1:headerを１秒消す</li>
+    <li id="btn_2">2:headerを１秒再表示する</li>
+    <li id="btn_3">3:ダブルクリックでfooterに文字を入れる</li>
+    <li id="btn_4">
+    4:id="result"に対して点滅するように記述
+    追加:id="result"の下に<div>B</div>を追加すること
+    </li>
+    <li id="btn_5">5:liの文字を赤と10pxに</li>
+    <li id="btn_6">6:liの四角を角丸に変更</li>
+    <li id="btn_7">7:liの背景をskyblueに</li>
+    <li id="btn_8">8:liの背景をgrayにし、クリックをoffにする</li>
+  </ul>
+  <div id="result">イベント処理（表示領域）</div>
+</main>
+
+
+<footer></footer>
+</body>
+</html>
