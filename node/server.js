@@ -1,8 +1,8 @@
 var http =require('http'),
     fs = require('fs'),
     ejs = require('ejs'),
-    qs = require('querystring')
-;var settings = require('./settings');
+    qs = require('querystring');
+var settings = require('./settings');
 console.log(settings);
 var server = http.createServer();
 var template = fs.readFileSync(__dirname + '/public_html/bbs.ejs','utf-8');
@@ -14,7 +14,7 @@ function renderForm(posts,res){
             res.writeHead(200,{'Content-Type' : 'text/html'});
             res.write(data);
             res.end();
-}
+};
 //ブロッキングな処理
 server.on('request', function(req,res){
     if (req.method ==="POST"){
